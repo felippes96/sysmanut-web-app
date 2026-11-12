@@ -1,0 +1,5 @@
+<!DOCTYPE html><html xmlns:th="http://www.thymeleaf.org"><body>
+<header class="topo" th:fragment="topo"><a class="marca" th:href="@{/}">SysManut</a>
+<nav><a th:href="@{/clientes}">Clientes</a><a th:href="@{/manutencao}">Nova manutenção</a><a th:href="@{/logout}">Sair</a></nav></header>
+<div th:fragment="erros"><div class="alerta" th:each="e : ${erros}" th:text="${e}"></div></div>
+</body></html>

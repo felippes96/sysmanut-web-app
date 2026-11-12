@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SysManut</title><link rel="stylesheet" th:href="@{/css/estilo.css}"></head><body><header th:replace="~{layout :: topo}"></header><main><h1>Clientes</h1>
+<form class="barra" method="get" th:action="@{/clientes}"><input name="q" th:value="${q}" placeholder="Buscar por nome ou e-mail"><button class="btn sec">Buscar</button><a class="btn" th:href="@{/clientes/novo}">Novo cliente</a></form>
+<table><thead><tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Ações</th></tr></thead><tbody>
+<tr th:each="c : ${clientes}"><td th:text="${c.nome}"></td><td th:text="${c.email}"></td><td th:text="${c.telefone}"></td>
+<td><a class="btn sec" th:href="@{/clientes/{id}/editar(id=${c.idCliente})}">Editar</a>
+<form method="post" style="display:inline" th:action="@{/clientes/{id}/excluir(id=${c.idCliente})}" onsubmit="return confirm('Excluir este cliente?')"><button class="btn perigo">Excluir</button></form></td></tr>
+<tr th:if="${#lists.isEmpty(clientes)}"><td colspan="4">Nenhum cliente encontrado.</td></tr></tbody></table></main></body></html>

@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SysManut</title><link rel="stylesheet" th:href="@{/css/estilo.css}"></head><body><main class="login"><div class="cartao"><h1>SysManut</h1><div th:replace="~{layout :: erros}"></div>
+<form method="post" th:action="@{/login}" data-validar data-servidor>
+<label for="login">Login</label><input id="login" name="login" required><div class="erro"></div>
+<label for="senha">Senha</label><input id="senha" name="senha" type="password" required><div class="erro"></div>
+<div class="acoes"><button class="btn">Entrar</button></div></form></div></main><script th:src="@{/js/comum.js}"></script></body></html>

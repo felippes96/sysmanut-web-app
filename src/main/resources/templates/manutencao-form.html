@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SysManut</title><link rel="stylesheet" th:href="@{/css/estilo.css}"></head><body><header th:replace="~{layout :: topo}"></header><main><h1>Nova manutenção</h1><div th:replace="~{layout :: erros}"></div>
+<div class="msg" th:if="${total != null}">Calculado pelo servidor: total <b th:text="'R$ ' + ${#numbers.formatDecimal(total,1,'POINT',2,'COMMA')}"></b> · garantia até <b th:text="${#temporals.format(fimGarantia,'dd/MM/yyyy')}"></b></div>
+<form class="cartao" method="post" th:action="@{/manutencao/calcular}" data-validar data-servidor>
+<label for="data">Data de conclusão</label><input id="data" name="data" type="date" required><div class="erro"></div>
+<label for="descricao">Descrição do serviço</label><input id="descricao" name="descricao" required><div class="erro"></div>
+<label for="maoDeObra">Mão de obra (R$)</label><input id="maoDeObra" name="maoDeObra" inputmode="decimal" value="0"><div class="erro"></div>
+<label>Peças</label><div id="pecas"></div><button type="button" id="addPeca" class="btn sec">Adicionar peça</button>
+<label for="desconto">Desconto (%)</label><input id="desconto" name="desconto" inputmode="decimal" value="0"><div class="erro" id="erro-desconto"></div>
+<div class="total">Prévia: <span id="total"></span></div><p>Garantia até: <b id="garantia">—</b> (90 dias)</p>
+<div class="acoes"><button class="btn">Calcular no servidor</button><a class="btn sec" th:href="@{/}">Cancelar</a></div></form></main>
+<script th:src="@{/js/comum.js}"></script><script th:src="@{/js/manutencao.js}"></script></body></html>

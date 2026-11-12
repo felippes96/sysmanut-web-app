@@ -1,0 +1,18 @@
+:root{--az:#1f3f6a;--az2:#e8eef7;--bd:#c9d3e0;--ok:#1b7a43;--er:#b3261e;--tx:#1d2733}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 "Segoe UI",system-ui,sans-serif;color:var(--tx);background:#f5f7fa}
+a{color:var(--az)}.topo{display:flex;justify-content:space-between;align-items:center;padding:.8rem 1.5rem;background:var(--az)}
+.topo a{color:#fff;text-decoration:none;margin-left:1.2rem}.marca{font-weight:700;font-size:1.25rem;margin:0!important}
+main{max-width:860px;margin:2rem auto;padding:0 1rem}h1{font-size:1.6rem;color:var(--az);margin:0 0 1rem}
+.cartao{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:1.5rem}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.grade a{background:#fff;border:1px solid var(--bd);border-radius:8px;padding:1.2rem;text-decoration:none}.grade a:hover{background:var(--az2)}
+label{display:block;font-weight:600;margin:1rem 0 .25rem}input,select{width:100%;padding:.55rem;border:1px solid var(--bd);border-radius:6px;font:inherit}
+input.invalido{border-color:var(--er)}.erro{color:var(--er);font-size:.85rem;min-height:1.1rem}
+.btn{display:inline-block;padding:.6rem 1.2rem;border:0;border-radius:6px;background:var(--az);color:#fff;font:inherit;cursor:pointer;text-decoration:none}
+.btn.sec{background:#fff;color:var(--az);border:1px solid var(--az)}.btn.perigo{background:var(--er)}.acoes{margin-top:1.2rem;display:flex;gap:.6rem}
+.msg{padding:.7rem 1rem;border-radius:6px;margin-bottom:1rem;background:#e3f4ea;color:var(--ok)}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:.6rem;border-bottom:1px solid var(--bd);text-align:left}th{background:var(--az2)}
+.barra{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1rem}.barra input{max-width:320px}
+.linha{display:flex;gap:.5rem;align-items:center}.total{font-size:1.4rem;font-weight:700;color:var(--az);margin-top:1rem}
+.login{max-width:380px;margin:12vh auto}@media(max-width:600px){.barra{flex-direction:column}th:nth-child(3),td:nth-child(3){display:none}}
+.alerta{padding:.7rem 1rem;border-radius:6px;margin-bottom:1rem;background:#fde7e5;color:var(--er)}
